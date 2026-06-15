@@ -102,43 +102,67 @@ button:focus, input:focus {
     transition: width 0.5s ease;
 }
 
-/* Dobra Inicial */
+/* 1. SEÇÃO HERO IMERSIVA COM IMAGEM E OVERLAY */
 .hero-dark-section {
-    background-color: var(--preto);
-    color: var(--branco);
-    padding: 6rem 2rem;
-    text-align: center;
     position: relative;
+    padding: 8rem 2rem;
+    text-align: center;
     overflow: hidden;
+    /* Imagem conceitual abstrata de redes/circuitos escuros */
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--branco);
 }
 
+/* Camada de Sobreposição (Overlay) para legibilidade absoluta */
 .hero-dark-section::before {
     content: '';
     position: absolute;
-    width: 400px;
-    height: 400px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 13, 22, 0.88);
+    z-index: 1;
+}
+
+/* Efeito Glow secundário desfocado */
+.hero-dark-section::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
     background: var(--azul-vibrante);
-    filter: blur(150px);
-    opacity: 0.15;
-    top: 10%;
+    filter: blur(160px);
+    opacity: 0.2;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
     pointer-events: none;
+}
+
+.hero-dark-section h1, .hero-dark-section p, .hero-dark-section .btn-cta {
+    position: relative;
+    z-index: 3;
 }
 
 .hero-dark-section h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 3.8rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     letter-spacing: -1px;
 }
 
 .hero-dark-section p {
-    color: #94a3b8;
-    font-size: 1.2rem;
+    color: #cbd5e1;
+    font-size: 1.3rem;
     max-width: 750px;
     margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
 }
 
 .btn-cta {
@@ -155,16 +179,16 @@ button:focus, input:focus {
 
 .btn-cta:hover {
     background-color: #1e75ff;
-    box-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
 }
 
-/* Estruturas de Blocos Alternados */
+/* Estruturas de Blocos Alternados e Pílulas de Texto */
 main { flex: 1; width: 100%; }
 
 .secao-conteudo-clara {
     background-color: var(--branco);
     color: var(--texto-escuro);
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
 }
 
 .secao-conteudo-clara h2 {
@@ -172,22 +196,24 @@ main { flex: 1; width: 100%; }
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     border-left: 4px solid var(--azul-vibrante);
-    padding-left: 12px;
+    padding-left: 14px;
 }
 
 .secao-conteudo-clara h3 {
     font-family: 'Poppins', sans-serif;
     color: var(--azul-escuro);
-    margin: 2.5rem 0 1rem 0;
+    margin: 3rem 0 1.2rem 0;
     font-size: 1.5rem;
 }
 
+/* Divisão em parágrafos mais curtos com espaçamento generoso */
 .secao-conteudo-clara p {
-    line-height: 1.75;
-    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
     font-size: 1.05rem;
+    max-width: 850px;
 }
 
 /* Grids */
@@ -195,7 +221,7 @@ main { flex: 1; width: 100%; }
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin: 2.5rem 0;
+    margin: 3rem 0;
 }
 
 .card-nexus-clean {
@@ -252,37 +278,75 @@ main { flex: 1; width: 100%; }
     background-color: var(--azul-vibrante);
 }
 
-/* Módulos Interativos e Clínicos */
+/* 2. FLASHCARDS INTERATIVOS COM EFEITO FLIP 3D */
 .container-flashcards {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     flex-wrap: wrap;
-    margin: 2rem 0;
+    margin: 3rem 0;
+    perspective: 1000px; /* Habilita profundidade 3D */
 }
 
-.flashcard {
-    background-color: var(--cinza-limpo);
-    border: 1px dashed var(--azul-escuro);
-    color: var(--azul-escuro);
-    width: 310px;
-    height: 150px;
-    padding: 1.5rem;
+.flashcard-wrapper {
+    width: 320px;
+    height: 180px;
+    cursor: pointer;
+}
+
+.flashcard-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(9, 13, 22, 0.05);
     border-radius: 6px;
+}
+
+/* Classe aplicada via JS ao clicar para girar */
+.flashcard-wrapper.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 6px;
+    padding: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    cursor: pointer;
     font-weight: 500;
-    transition: all 0.2s;
 }
 
-.flashcard:hover {
-    border-style: solid;
-    border-color: var(--azul-vibrante);
-    background-color: var(--branco);
+/* Frente: Fundo escuro com brilho sutil em azul claro */
+.flashcard-front {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.03);
+    transition: transform 0.3s, border-color 0.3s;
 }
 
+/* Efeito Hover: Elevação milimétrica */
+.flashcard-wrapper:hover .flashcard-front {
+    transform: translateY(-4px);
+    border-color: var(--azul-claro);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.1);
+}
+
+/* Verso: Revelação com fundo azul vibrante */
+.flashcard-back {
+    background-color: var(--azul-vibrante);
+    color: var(--branco);
+    transform: rotateY(180deg);
+}
+
+/* Módulos Interativos */
 .interactive-box-clean {
     background-color: var(--cinza-limpo);
     padding: 2.5rem;
@@ -362,32 +426,50 @@ footer {
 ul { margin-left: 2rem; margin-bottom: 1.5rem; }
 li { margin-bottom: 0.6rem; line-height: 1.6; }
 
-/* ACESSIBILIDADE */
-.menu-acessibilidade-container {
+/* ==========================================================================
+   3. CONTAINER DE UTILITÁRIOS E PAINEL LATERAL
+   ========================================================================== */
+.utilitarios-flutuantes {
     position: fixed;
     right: 20px;
-    top: 55%;
-    transform: translateY(-50%);
+    bottom: 20px;
     z-index: 3000;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 10px;
+    gap: 12px;
 }
 
-.btn-flutuante-acessibilidade {
-    width: 50px;
-    height: 50px;
+.btn-flutuante {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background-color: var(--azul-escuro);
     border: 1px solid rgba(255,255,255,0.1);
     color: white;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+.btn-flutuante:hover {
+    background-color: var(--azul-vibrante);
+    transform: scale(1.05);
+}
+
+/* Seta para cima inicia invisível */
+#btn-subir {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#btn-subir.visivel {
+    opacity: 1;
+    visibility: visible;
 }
 
 .painel-acessibilidade-conteudo {
@@ -396,25 +478,36 @@ li { margin-bottom: 0.6rem; line-height: 1.6; }
     background-color: var(--azul-escuro);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 6px;
-    padding: 1rem;
-    width: 210px;
+    padding: 1.2rem;
+    width: 220px;
     gap: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    /* Animação suave de surgimento lateral */
+    animation: deslizarPainel 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.painel-acessibilidade-conteudo h4 { color: white; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
-.painel-acessibilidade-conteudo button { background-color: rgba(255,255,255,0.05); border: none; color: white; padding: 0.6rem; border-radius: 4px; cursor: pointer; text-align: left; }
+@keyframes deslizarPainel {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.painel-acessibilidade-conteudo h4 { color: white; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; }
+.painel-acessibilidade-conteudo button { background-color: rgba(255,255,255,0.06); border: none; color: white; padding: 0.7rem; border-radius: 4px; cursor: pointer; text-align: left; font-size: 0.9rem; transition: background 0.2s; }
 .painel-acessibilidade-conteudo button:hover { background-color: var(--azul-vibrante); }
 
-[vw] { position: fixed !important; right: 20px !important; top: 38% !important; z-index: 3000 !important; }
+/* Customização da posição do VLibras para alinhar sobre a engrenagem */
+[vw] { position: fixed !important; right: 20px !important; bottom: 210px !important; z-index: 3000 !important; }
 
-body.alto-contraste { background-color: #000000 !important; color: #ffff00 !important; }
-body.alto-contraste *, body.alto-contraste button { background-color: #000000 !important; color: #ffff00 !important; border: 1px solid #ffff00 !important; }
+/* Modificadores Mecânicos de Acessibilidade */
+body.alto-contraste { background-color: #000000 !important; color: #ffffff !important; }
+body.alto-contraste *, body.alto-contraste button { background-color: #000000 !important; color: #ffffff !important; border: 1px solid #ffffff !important; background-image: none !important; }
+body.alto-contraste .hero-dark-section::before { background: rgba(0,0,0,1) !important; }
 
 body.fonte-dislexia, body.fonte-dislexia * {
     font-family: 'Comic Sans MS', cursive, sans-serif !important;
     letter-spacing: 1.5px !important;
     word-spacing: 3px !important;
-    line-height: 1.8 !important;
+    line-height: 1.9 !important;
 }
-body.modo-daltonismo { filter: saturate(1.4) contrast(1.25) !important; }
+body.modo-daltonismo { filter: saturate(1.5) contrast(1.2) hue-rotate(15deg) !important; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

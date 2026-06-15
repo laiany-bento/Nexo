@@ -31,8 +31,12 @@
     <main id="conteudo-principal">
         </main>
 
-    <div class="menu-acessibilidade-container">
-        <button class="btn-flutuante-acessibilidade" onclick="togglePainelAcessibilidade()" title="Opções de Acessibilidade" aria-label="Abrir recursos de acessibilidade">♿</button>
+    <div class="utilitarios-flutuantes">
+        <button id="btn-subir" class="btn-flutuante" onclick="rolarTopo()" title="Voltar ao topo" aria-label="Voltar ao topo">▲</button>
+        <button id="btn-descer" class="btn-flutuante" onclick="rolarRodape()" title="Ir para o rodapé" aria-label="Ir para o rodapé">▼</button>
+        
+        <button class="btn-flutuante btn-engrenagem" onclick="togglePainelAcessibilidade()" title="Opções de Acessibilidade" aria-label="Abrir recursos de acessibilidade">⚙️</button>
+        
         <div id="painel-acessibilidade" class="painel-acessibilidade-conteudo" role="region" aria-label="Painel de acessibilidade">
             <h4>Acessibilidade</h4>
             <button onclick="alterarFonte(1)">➕ Aumentar Letra</button>
@@ -55,7 +59,7 @@
         <button class="btn-cta" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;" onclick="document.getElementById('cookies-banner').style.display='none'">Aceitar Termos</button>
     </div>
 
-    <footer>
+    <footer id="rodape-portal">
         <div class="footer-content">
             <p><strong>NEXUS.</strong> Plataforma de Análise e Evolução Tecnológica.</p>
             <p>Todos os direitos reservados &copy; 2026 | Infraestrutura Informacional Escalável</p>

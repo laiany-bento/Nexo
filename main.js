@@ -55,6 +55,11 @@ const paginas = {
         </section>
     `,
     ia: `
+        <section class="hero-dark-section">
+            <h1>Inteligência Artificial</h1>
+            <p>Mapeamento de modelos de processamento autônomo e ecossistemas cognitivos.</p>
+        </section>
+
         <section class="secao-conteudo-clara">
             <h2>Inteligência Artificial Integrada</h2>
             <p>Modelos de processamento autônomo projetados para emular a capacidade cognitiva analítica de tomada de decisão, diagnósticos avançados e decodificação contextual.</p>
@@ -92,11 +97,26 @@ const paginas = {
 
             <blockquote>A inteligência artificial transformou-se no principal ativo de aceleração analítica em diagnósticos por imagens no setor de saúde global.</blockquote>
 
-            <h3>Documentações Técnicas Rápidas</h3>
+            <h3>Documentações Técnicas Rápidas (Toque para girar)</h3>
             <div class="container-flashcards">
-                <div class="flashcard" onclick="this.innerHTML='Simulação algorítmica de processos cognitivos humanos por sistemas de software.'">Definição de IA?</div>
-                <div class="flashcard" onclick="this.innerHTML='Subcampo de computação focado no aprendizado estatístico automatizado por meio de volumetria de dados.'">O que é Machine Learning?</div>
-                <div class="flashcard" onclick="this.innerHTML='O cientista John McCarthy durante a histórica Conferência de Dartmouth em 1956.'">Origem do Termo?</div>
+                <div class="flashcard-wrapper" onclick="girarCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">Definição de IA?</div>
+                        <div class="flashcard-back">Simulação algorítmica de processos cognitivos humanos por sistemas de software.</div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" onclick="girarCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">O que é Machine Learning?</div>
+                        <div class="flashcard-back">Subcampo de computação focado no aprendizado estatístico por meio de volumes de dados.</div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" onclick="girarCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">Origem do Termo?</div>
+                        <div class="flashcard-back">O cientista John McCarthy durante a histórica Conferência de Dartmouth em 1956.</div>
+                    </div>
+                </div>
             </div>
 
             <div class="interactive-box-clean">
@@ -110,6 +130,11 @@ const paginas = {
         </section>
     `,
     computadores: `
+        <section class="hero-dark-section">
+            <h1>Arquitetura de Computadores</h1>
+            <p>A linha evolutiva dos hardwares e processadores em escala global.</p>
+        </section>
+
         <section class="secao-conteudo-clara">
             <h2>Evolução e Arquitetura de Computadores</h2>
             <p>A história das máquinas de processamento é pautada pelo princípio da miniaturização de semicondutores e otimização de ciclos lógicos.</p>
@@ -156,10 +181,20 @@ const paginas = {
                 </tbody>
             </table>
 
-            <h3>Documentações Técnicas Rápidas</h3>
+            <h3>Documentações Técnicas (Toque para girar)</h3>
             <div class="container-flashcards">
-                <div class="flashcard" onclick="this.innerHTML='O marco inicial dos computadores digitais operando em escala militar.'">O que foi o ENIAC?</div>
-                <div class="flashcard" onclick="this.innerHTML='A CPU completa integrada de forma micrométrica em uma pastilha de silício.'">O que é Microprocessador?</div>
+                <div class="flashcard-wrapper" onclick="girarCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">O que foi o ENIAC?</div>
+                        <div class="flashcard-back">O marco inicial dos computadores digitais operando em escala militar.</div>
+                    </div>
+                </div>
+                <div class="flashcard-wrapper" onclick="girarCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">O que é Microprocessador?</div>
+                        <div class="flashcard-back">A CPU completa integrada de forma micrométrica em uma pastilha de silício.</div>
+                    </div>
+                </div>
             </div>
 
             <div class="interactive-box-clean">
@@ -173,6 +208,11 @@ const paginas = {
         </section>
     `,
     seguranca: `
+        <section class="hero-dark-section">
+            <h1>Segurança Cibernética</h1>
+            <p>Protocolos defensivos e blindagem contra vetores de vulnerabilidade ativos.</p>
+        </section>
+
         <section class="secao-conteudo-clara">
             <h2>Matriz de Segurança Cibernética</h2>
             <p>Aplicação de metodologias defensivas ativas para blindar redes de dados contra infiltrações de códigos maliciosos e ações de engenharia social.</p>
@@ -201,6 +241,11 @@ const paginas = {
         </section>
     `,
     deepfakes: `
+        <section class="hero-dark-section">
+            <h1>Mídias Sintéticas</h1>
+            <p>O impacto das redes adversariais generativas na veracidade documental.</p>
+        </section>
+
         <section class="secao-conteudo-clara">
             <h2>Mídias Sintéticas e Deepfakes</h2>
             <p>Análise de inteligências generativas voltadas para a adulteração e criação contextual de arquivos de áudio e vídeo sob redes adversariais.</p>
@@ -227,15 +272,20 @@ const paginas = {
         </section>
     `,
     robotica: `
+        <section class="hero-dark-section">
+            <h1>Sistemas Robóticos</h1>
+            <p>A integração entre barramentos lógicos e automação eletromecânica espacial.</p>
+        </section>
+
         <section class="secao-conteudo-clara">
             <h2>Sistemas Robóticos Mecanizados</h2>
             <p>Fusão de hardware dinâmico e algoritmos lógicos para automação física e manipulação espacial controlada por software.</p>
 
             <h3>Eixos de Atuação Industrial e Civil</h3>
             <ul>
-                <li><strong>Medicina de Alta Precisão:</strong> Sistemas robóticos cirúrgicos guiados de forma remota e micrométrica.</li>
+                <li><strong>Medicina de Alta Precisão:</strong> Sondas robóticas cirúrgicas guiadas de forma remota e micrométrica.</li>
                 <li><strong>Automação Logística:</strong> Frotas autônomas e braços articulados de esteiras de montagem pesada.</li>
-                <li><strong>Exploração Espacial:</strong> Sondas autônomas parametrizadas para mapeamento topográfico planetário severo.</li>
+                <li><strong>Exploração Espacial:</strong> Veículos autônomos parametrizados para mapeamento topográfico planetário severo.</li>
             </ul>
 
             <div class="interactive-box-clean">
@@ -248,6 +298,11 @@ const paginas = {
         </section>
     `,
     extras: `
+        <section class="hero-dark-section">
+            <h1>Documentação Geral</h1>
+            <p>Repositórios analíticos, glossário de termos e indicadores consolidados.</p>
+        </section>
+
         <section class="secao-conteudo-clara">
             <h2>Documentação e Repositório de Dados</h2>
             <p>Clique sobre os conceitos estruturais para exibição da nota técnica descritiva:</p>
@@ -275,7 +330,7 @@ const paginas = {
 
             <h3>Matriz de Conquistas Analíticas</h3>
             <div class="grid-nexus">
-                <div class="card-conquista desbloqueada" id="conq-1">
+                <div class="card-conquista unlocked-mock" id="conq-1">
                     <span style="font-size:1.5rem;">📊</span>
                     <div>
                         <h4>Módulo Inicial Validado</h4>
@@ -297,10 +352,6 @@ const paginas = {
                     </div>
                 </div>
             </div>
-
-            <h3 style="margin-top:3rem;">Ficha Técnica do Projeto</h3>
-            <p><strong>Escopo:</strong> Arquitetura de documentação histórica computacional unificada sob diretrizes SPA estáveis.</p>
-            <p><strong>Engenharia:</strong> Estruturação semântica limpa em HTML5, estilização reativa em CSS3 e tratamento lógico funcional em JavaScript Baunilha Nativo.</p>
         </section>
     `
 };
@@ -313,6 +364,12 @@ function navegar(paginaAlvo) {
         
         topicosExplorados.add(paginaAlvo);
         
+        // Garante que o estado visual da conquista 1 persista como desbloqueado na página extras
+        if (progressoGlobal > 20 && paginaAlvo === 'extras') {
+            const c1 = document.getElementById('conq-1');
+            if (c1) c1.classList.add('desbloqueada');
+        }
+
         if (topicosExplorados.size >= 5) {
             const conq2 = document.getElementById('conq-2');
             if (conq2) conq2.classList.add('desbloqueada');
@@ -394,11 +451,17 @@ function analisarSenha(senha) {
     }
 }
 
+// Mecânica do Efeito Flip Tridimensional nos Flashcards
+function girarCard(cardWrapper) {
+    cardWrapper.classList.toggle('flipped');
+}
+
 function expandirTermo(elemento) {
     const p = elemento.querySelector('p');
     if (p) p.style.display = (p.style.display === 'block') ? 'none' : 'block';
 }
 
+// Mecânica do Painel de Acessibilidade Retroatível
 function togglePainelAcessibilidade() {
     const painel = document.getElementById('painel-acessibilidade');
     if (painel) painel.style.display = (painel.style.display === 'flex') ? 'none' : 'flex';
@@ -414,6 +477,28 @@ function alterarFonte(direcao) {
 function toggleAltoContraste() { document.body.classList.toggle('alto-contraste'); }
 function toggleDislexia() { document.body.classList.toggle('fonte-dislexia'); }
 function toggleDaltonismo() { document.body.classList.toggle('modo-daltonismo'); }
+
+// Mecânica de Rolagem Rápida Reativa
+function rolarTopo() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function rolarRodape() {
+    const rodape = document.getElementById('rodape-portal');
+    if (rodape) rodape.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Evento para monitorar a rolagem e exibir a seta de voltar ao topo dinamicamente
+window.onscroll = function() {
+    const btnSubir = document.getElementById('btn-subir');
+    if (btnSubir) {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btnSubir.classList.add('visivel');
+        } else {
+            btnSubir.classList.remove('visivel');
+        }
+    }
+};
 
 window.onload = () => {
     navegar('home');
