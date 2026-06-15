@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS – Conectando a Evolução Tecnológica</title>
+    <title>NEXUS – Sistema de Informação Modular</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -12,37 +12,38 @@
 <body>
 
     <header>
-        <div class="logo" onclick="navegar('home')">NEXUS<span class="logo-ponto">.</span></div>
-        <nav aria-label="Navegação Institucional">
+        <div class="logo" onclick="navegar('home')">
+            <span class="cobra-esquerda">🐍</span>NEXUS<span class="cobra-direita">🐍</span>
+        </div>
+        <nav aria-label="Navegação de Módulos">
             <button onclick="navegar('home')">Home</button>
-            <button onclick="navegar('ia')">Inteligência Artificial</button>
-            <button onclick="navegar('computadores')">Computadores</button>
+            <button onclick="navegar('ia')">IA</button>
+            <button onclick="navegar('computadores')">Sistemas</button>
             <button onclick="navegar('seguranca')">Segurança</button>
-            <button onclick="navegar('deepfakes')">Deepfakes</button>
+            <button onclick="navegar('deepfakes')">Mídias</button>
             <button onclick="navegar('robotica')">Robótica</button>
-            <button onclick="navegar('extras')">Documentação</button>
+            <button onclick="navegar('extras')">Documentos</button>
         </nav>
         <div class="xp-container" aria-live="polite">
-            <span id="badge-atual">Análise Iniciada</span>
+            <span id="badge-atual">Módulo Pronto</span>
             <div class="barra-progresso"><div id="progresso-interno"></div></div>
         </div>
     </header>
 
-    <main id="conteudo-principal">
+    <main id="conteudo-principal" class="container-grid-modular">
         </main>
 
     <div class="utilitarios-flutuantes">
         <button id="btn-subir" class="btn-flutuante" onclick="rolarTopo()" title="Voltar ao topo" aria-label="Voltar ao topo">▲</button>
         <button id="btn-descer" class="btn-flutuante" onclick="rolarRodape()" title="Ir para o rodapé" aria-label="Ir para o rodapé">▼</button>
-        
-        <button class="btn-flutuante btn-engrenagem" onclick="togglePainelAcessibilidade()" title="Opções de Acessibilidade" aria-label="Abrir recursos de acessibilidade">⚙️</button>
+        <button class="btn-flutuante btn-engrenagem" onclick="togglePainelAcessibilidade()" title="Configurações e Acessibilidade" aria-label="Abrir acessibilidade">⚙️</button>
         
         <div id="painel-acessibilidade" class="painel-acessibilidade-conteudo" role="region" aria-label="Painel de acessibilidade">
             <h4>Acessibilidade</h4>
-            <button onclick="alterarFonte(1)">➕ Aumentar Letra</button>
-            <button onclick="alterarFonte(-1)">➖ Diminuir Letra</button>
+            <button onclick="alterarFonte(1)">➕ Aumentar Fonte</button>
+            <button onclick="alterarFonte(-1)">➖ Reduzir Fonte</button>
             <button onclick="toggleAltoContraste()">🌓 Alto Contraste</button>
-            <button onclick="toggleDislexia()">📖 Fonte p/ Dislexia</button>
+            <button onclick="toggleDislexia()">📖 Modo Dislexia</button>
             <button onclick="toggleDaltonismo()">👁️ Modo Daltonismo</button>
         </div>
     </div>
@@ -55,20 +56,25 @@
     </div>
 
     <div id="cookies-banner" class="lgpd-banner" role="alert">
-        <p>Este ecossistema utiliza cookies para otimizar sua experiência de navegação corporativa de acordo com as diretrizes da LGPD.</p>
-        <button class="btn-cta" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;" onclick="document.getElementById('cookies-banner').style.display='none'">Aceitar Termos</button>
+        <p>Este portal adota os padrões modulares da LGPD para integridade e segurança no processamento de dados.</p>
+        <button class="btn-cta" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;" onclick="document.getElementById('cookies-banner').style.display='none'">Conformidade</button>
     </div>
 
     <footer id="rodape-portal">
         <div class="footer-content">
-            <p><strong>NEXUS.</strong> Plataforma de Análise e Evolução Tecnológica.</p>
-            <p>Todos os direitos reservados &copy; 2026 | Infraestrutura Informacional Escalável</p>
-            <p class="links-uteis">Navegação Rápida: <span onclick="navegar('home')">Início</span> | <span onclick="navegar('extras')">Glossário</span> | <span onclick="navegar('extras')">Estatísticas</span></p>
+            <p><strong>NEXUS.</strong> Infraestrutura Digital de Engenharia Reativa e Conhecimento Filosófico.</p>
+            <p>Todos os direitos reservados &copy; 2026 | Arquitetura de Software</p>
+            <p class="links-uteis"><span onclick="navegar('home')">Início</span> | <span onclick="navegar('extras')">Glossário Técnico</span></p>
         </div>
     </footer>
 
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    <script>
+        // Inicialização estrita do Widget
+        document.addEventListener("DOMContentLoaded", function() {
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        });
+    </script>
     <script src="main.js"></script>
 </body>
 </html>

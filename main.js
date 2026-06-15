@@ -1,358 +1,432 @@
-let progressoGlobal = 20;
+let progressoGlobal = 10;
 let topicosExplorados = new Set(['home']);
 let tamanhoFonteBase = 100;
 
 const paginas = {
     home: `
-        <section class="hero-dark-section">
-            <h1>NEXUS<span class="logo-ponto">.</span></h1>
-            <p>Infraestrutura analítica sobre a evolução da computação, inteligência integrada e segurança cibernética global.</p>
-            <button class="btn-cta" onclick="navegar('ia')">Iniciar Análise Tecnológica</button>
-        </section>
+        <div class="hero-modular-banner">
+            <h1>NEXUS</h1>
+            <div class="subtitulo-filosofico">"Só sei que nada sei, mas a máquina calcula o que eu mal posso conceber." — Adaptação Epistemológica</div>
+            <button class="btn-cta" onclick="navegar('ia')">Iniciar Exploração do Conhecimento</button>
+        </div>
 
-        <section class="secao-conteudo-clara">
-            <div style="max-width:1200px; margin:0 auto;">
-                <h2>A Convergência Digital e o Impacto Social</h2>
-                <p>A tecnologia computacional contemporânea processa e dita a evolução estrutural do mercado e das relações humanas. De sistemas mecânicos isolados a redes de inteligência artificial de larga escala, mapeamos os caminhos lógicos que transformaram dados brutos em patrimônio de conhecimento global.</p>
-                
-                <div class="grid-nexus">
-                    <div class="card-nexus-clean" onclick="navegar('ia')">
-                        <h3>🤖 História da IA</h3>
-                        <p>A arquitetura de redes neurais artificiais e sistemas generativos modernos.</p>
-                    </div>
-                    <div class="card-nexus-clean" onclick="navegar('computadores')">
-                        <h3>💻 Evolução de Sistemas</h3>
-                        <p>O percurso físico da miniaturização do hardware e processamento de dados.</p>
-                    </div>
-                    <div class="card-nexus-clean" onclick="navegar('seguranca')">
-                        <h3>🔒 Matriz de Segurança</h3>
-                        <p>Protocolos de segurança defensiva contra engenharia social e vulnerabilidades digitais.</p>
-                    </div>
-                    <div class="card-nexus-clean" onclick="navegar('deepfakes')">
-                        <h3>🎭 Limiares da Mídia Sintética</h3>
-                        <p>O impacto de simulações e deepfakes na validação de dados contemporâneos.</p>
-                    </div>
-                    <div class="card-nexus-clean" onclick="navegar('robotica')">
-                        <h3>🦾 Engenharia Robótica</h3>
-                        <p>A automação mecânica inteligente transformando indústrias e a medicina de precisão.</p>
-                    </div>
+        <div class="modulo-card-tela">
+            <h2>A Convergência Digital e o Impacto Social</h2>
+            <p>A tecnologia computacional contemporânea processa e dita a evolução estrutural do mercado e das relações humanas. De sistemas mecânicos isolados a redes de inteligência artificial de larga escala, mapeamos os caminhos lógicos que transformaram dados brutos em patrimônio de conhecimento global.</p>
+            
+            <div class="grid-blocos-wireframe">
+                <div class="bloco-wireframe-item" onclick="navegar('ia')">
+                    <h3>🤖 História da IA</h3>
+                    <p>A arquitetura de redes neurais artificiais e sistemas generativos modernos.</p>
                 </div>
-
-                <div style="background:var(--cinza-limpo); padding:2rem; border-radius:6px; margin-top:2rem; border:1px solid rgba(0, 102, 255, 0.15);">
-                    <h3>📊 Indicador Histórico Diário</h3>
-                    <p id="curiosidade-texto" style="margin-bottom:0; color:var(--texto-escuro);">O ENIAC ocupava aproximadamente 167 m² e pesava cerca de 27 toneladas em sua estrutura valvulada primordial.</p>
+                <div class="bloco-wireframe-item" onclick="navegar('computadores')">
+                    <h3>💻 Evolução de Sistemas</h3>
+                    <p>O percurso físico da miniaturização do hardware e processamento de dados.</p>
                 </div>
-
-                <div style="background:var(--cinza-limpo); padding:3rem; border-radius:6px; margin-top:3rem; text-align:center; border: 1px dashed var(--texto-cinza);">
-                    <h3>Receber Boletins Técnicos</h3>
-                    <p style="color:var(--texto-cinza); font-size:0.95rem;">Inscreva seu e-mail corporativo para análises conjunturais semanais sobre computação e segurança.</p>
-                    <div style="display:flex; gap:12px; justify-content:center; max-width:550px; margin:1.5rem auto 0 auto; flex-wrap:wrap;">
-                        <input type="email" placeholder="Endereço de e-mail institucional..." style="flex:1; padding:0.8rem; border-radius:4px; border:1px solid rgba(0,0,0,0.15); min-width:250px;" aria-label="E-mail profissional">
-                        <button class="btn-cta" onclick="alert('Registro institucional efetuado no banco de dados.')">Cadastrar</button>
-                    </div>
+                <div class="bloco-wireframe-item" onclick="navegar('seguranca')">
+                    <h3>🔒 Matriz de Segurança</h3>
+                    <p>Protocolos de segurança defensiva contra engenharia social e vulnerabilidades digitais.</p>
+                </div>
+                <div class="bloco-wireframe-item" onclick="navegar('deepfakes')">
+                    <h3>🎭 Mídia Sintética</h3>
+                    <p>O impacto de simulações e deepfakes na validação de dados contemporâneos.</p>
+                </div>
+                <div class="bloco-wireframe-item" onclick="navegar('robotica')">
+                    <h3>🦾 Engenharia Robótica</h3>
+                    <p>A automação mecânica inteligente transformando indústrias e a medicina de precisão.</p>
                 </div>
             </div>
-        </section>
+        </div>
     `,
     ia: `
-        <section class="hero-dark-section">
+        <div class="hero-modular-banner">
             <h1>Inteligência Artificial</h1>
-            <p>Mapeamento de modelos de processamento autônomo e ecossistemas cognitivos.</p>
-        </section>
+            <div class="subtitulo-filosofico">"A inteligência é o que você usa quando não sabe o que fazer." — Jean Piaget</div>
+        </div>
 
-        <section class="secao-conteudo-clara">
+        <div class="modulo-card-tela">
             <h2>Inteligência Artificial Integrada</h2>
             <p>Modelos de processamento autônomo projetados para emular a capacidade cognitiva analítica de tomada de decisão, diagnósticos avançados e decodificação contextual.</p>
             
             <h3>Cronologia do Desenvolvimento</h3>
-            <div class="timeline-nexus">
-                <div class="timeline-item-nexus">
+            <div class="timeline-modular">
+                <div class="timeline-item-modular">
                     <h4>1950 — Formulação do Teste de Turing</h4>
                     <p>Alan Turing conceitua metodologias de validação de inteligência em sistemas artificiais através de jogos de imitação estruturados.</p>
                 </div>
-                <div class="timeline-item-nexus">
+                <div class="timeline-item-modular">
                     <h4>1956 — Convenção de Dartmouth</h4>
-                    <p>Estabelecimento formal e acadêmico do termo inteligência artificial cunhado por John McCarthy.</p>
+                    <p>Cunhagem do termo oficial por John McCarthy, formalizando a IA como disciplina acadêmica.</p>
                 </div>
-                <div class="timeline-item-nexus">
-                    <h4>1997 — Processamento de Alto Desempenho</h4>
-                    <p>O supercomputador Deep Blue da IBM executa análises combinatórias complexas e vence o campeonato mundial de xadrez.</p>
+                <div class="timeline-item-modular">
+                    <h4>1997 — Vitória do Deep Blue</h4>
+                    <p>O supercomputador da IBM vence Garry Kasparov no xadrez através de força bruta e algoritmos táticos avançados.</p>
                 </div>
-                <div class="timeline-item-nexus">
-                    <h4>2010 — Expansão de Massas de Dados (Big Data)</h4>
-                    <p>A abundância de dados de infraestrutura e o processamento paralelo aceleram o Machine Learning profundo.</p>
+                <div class="timeline-item-modular">
+                    <h4>2012 — Revolução da AlexNet (Deep Learning)</h4>
+                    <p>A rede neural convolucional de Geoffrey Hinton demonstra o poder do aprendizado profundo usando GPUs para visão computacional.</p>
                 </div>
-                <div class="timeline-item-nexus">
-                    <h4>Atualidade — Redes Autônomas Generativas</h4>
-                    <p>Ecossistemas neurais de larga escala automatizam processos lógicos, revisões de código e desenvolvimento globais.</p>
+                <div class="timeline-item-modular">
+                    <h4>Atualidade — Modelos de Linguagem de Larga Escala (LLMs)</h4>
+                    <p>Arquiteturas baseadas em Transformers processam exabytes de texto, gerando código e raciocínio contextual.</p>
                 </div>
             </div>
 
-            <h3>Aplicações Tecnológicas Reais</h3>
-            <ul>
-                <li><strong>Processamento de Linguagem Natural:</strong> Modelos integrados de conversação contextual analítica.</li>
-                <li><strong>Biometria Computacional:</strong> Redes de segurança para reconhecimento e rastreamento em tempo real.</li>
-                <li><strong>Sistemas Especialistas Clínicos:</strong> Algoritmos de mapeamento e predição de diagnósticos por imagem.</li>
-            </ul>
-
-            <blockquote>A inteligência artificial transformou-se no principal ativo de aceleração analítica em diagnósticos por imagens no setor de saúde global.</blockquote>
-
-            <h3>Documentações Técnicas Rápidas (Toque para girar)</h3>
-            <div class="container-flashcards">
-                <div class="flashcard-wrapper" onclick="girarCard(this)">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">Definição de IA?</div>
-                        <div class="flashcard-back">Simulação algorítmica de processos cognitivos humanos por sistemas de software.</div>
+            <h3>Documentações Técnicas Dinâmicas (Passe o mouse para revelar)</h3>
+            <div class="container-flashcards-modular">
+                <div class="wrapper-card-modular">
+                    <div class="card-interno-modular">
+                        <div class="face-modular-frente">O que define uma Rede Neural?</div>
+                        <div class="face-modular-verso">Modelos computacionais matemáticos inspirados na estrutura biológica do cérebro humano, capazes de aprender por padrões de repetição de dados.</div>
                     </div>
                 </div>
-                <div class="flashcard-wrapper" onclick="girarCard(this)">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">O que é Machine Learning?</div>
-                        <div class="flashcard-back">Subcampo de computação focado no aprendizado estatístico por meio de volumes de dados.</div>
+                <div class="wrapper-card-modular">
+                    <div class="card-interno-modular">
+                        <div class="face-modular-frente">O que são Transformers?</div>
+                        <div class="face-modular-verso">Arquiteturas de aprendizado profundo baseadas em mecanismos de atenção, que calculam o peso e a relação de todas as palavras em uma frase simultaneamente.</div>
                     </div>
                 </div>
-                <div class="flashcard-wrapper" onclick="girarCard(this)">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">Origem do Termo?</div>
-                        <div class="flashcard-back">O cientista John McCarthy durante a histórica Conferência de Dartmouth em 1956.</div>
+                <div class="wrapper-card-modular">
+                    <div class="card-interno-modular">
+                        <div class="face-modular-frente">Diferença entre IA Forte e Fraca?</div>
+                        <div class="face-modular-verso">A IA fraca resolve tarefas específicas (jogar xadrez, classificar e-mails). A IA forte (AGI) possuiria autoconsciência e intelecto humano geral generalizado.</div>
                     </div>
                 </div>
             </div>
 
-            <div class="interactive-box-clean">
-                <h3>Avaliação de Absorção Técnica</h3>
-                <p>Em qual marco histórico a inteligência artificial validou sua superioridade em análises de lógica matemática complexa frente ao xadrez mundial?</p>
-                <button class="opcao-clean" onclick="validarQuiz(this, false)">Conferência de Dartmouth em 1956</button>
-                <button class="opcao-clean" onclick="validarQuiz(this, true)">Partida do Supercomputador Deep Blue em 1997</button>
-                <button class="opcao-clean" onclick="validarQuiz(this, false)">Publicação do Teste de Turing em 1950</button>
+            <div class="bloco-interativo-modulo" id="quiz-ia">
+                <h3>Avaliação Técnica de IA (5 Questões)</h3>
+                <div class="pergunta-grupo" data-index="1">
+                    <p><strong>1. Quem propôs o famoso "Jogo da Imitação" para testar a capacidade de pensamento de uma máquina?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'ia')">Alan Turing</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'ia')">John McCarthy</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="2">
+                    <p><strong>2. Qual evento de 1956 é considerado o berço oficial da Inteligência Artificial?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'ia')">Projeto Manhattan</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'ia')">Conferência de Dartmouth</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="3">
+                    <p><strong>3. Que tipo de aprendizado depende de um conjunto de dados previamente rotulados por humanos?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'ia')">Aprendizado Supervisionado</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'ia')">Aprendizado por Reforço</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="4">
+                    <p><strong>4. Qual componente de hardware acelerou o Deep Learning devido ao seu processamento paralelo massivo?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'ia')">CPUs Single-Core</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'ia')">GPUs (Placas Gráficas)</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="5">
+                    <p><strong>5. O mecanismo de "Atenção" revolucionou qual área da inteligência artificial moderna?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'ia')">Processamento de Linguagem Natural (Transformers)</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'ia')">Sistemas Mecânicos Hidráulicos</button>
+                </div>
                 <span class="resultado-quiz" style="display:block; margin-top:1rem; font-weight:500;"></span>
             </div>
-        </section>
+        </div>
     `,
     computadores: `
-        <section class="hero-dark-section">
-            <h1>Arquitetura de Computadores</h1>
-            <p>A linha evolutiva dos hardwares e processadores em escala global.</p>
-        </section>
+        <div class="hero-modular-banner">
+            <h1>Arquitetura de Sistemas</h1>
+            <div class="subtitulo-filosofico">"O computador é o equivalente a uma bicicleta para as nossas mentes." — Steve Jobs</div>
+        </div>
 
-        <section class="secao-conteudo-clara">
-            <h2>Evolução e Arquitetura de Computadores</h2>
-            <p>A história das máquinas de processamento é pautada pelo princípio da miniaturização de semicondutores e otimização de ciclos lógicos.</p>
+        <div class="modulo-card-tela">
+            <h2>Evolução e Engenharia de Semicondutores</h2>
+            <p>O desenvolvimento da computação moderna é regido pelas mudanças físicas estruturais dos componentes elementares de comutação lógica.</p>
 
-            <h3>Gerações Estruturais de Hardware</h3>
-            <div class="timeline-nexus">
-                <div class="timeline-item-nexus">
-                    <h4>Primeira Etapa — Válvulas Termoiônicas</h4>
-                    <p>Sistemas macroestruturais com alto consumo térmico dedicados a fins puramente criptográficos ou militares.</p>
-                </div>
-                <div class="timeline-item-nexus">
-                    <h4>Segunda Etapa — Transistores de Estado Sólido</h4>
-                    <p>Substituição do vácuo por semicondutores físicos, reduzindo drasticamente as taxas de falha mecânica.</p>
-                </div>
-                <div class="timeline-item-nexus">
-                    <h4>Terceira Etapa — Microcircuitos Integrados</h4>
-                    <p>Impressão de múltiplos transistores em lâminas de silício, dando origem aos sistemas operacionais primitivos.</p>
-                </div>
-                <div class="timeline-item-nexus">
-                    <h4>Quarta Etapa — Microprocessadores de Larga Escala</h4>
-                    <p>Centralização de uma unidade lógica de processamento em um único invólucro (chip), viabilizando a computação pessoal.</p>
-                </div>
-            </div>
-
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0; font-size:0.95rem;">
+            <table>
                 <thead>
-                    <tr style="border-bottom: 2px solid var(--azul-vibrante); text-align: left; background: var(--cinza-limpo)">
-                        <th style="padding: 12px;">Métrica Operacional</th>
-                        <th style="padding: 12px;">Arquiteturas Primitivas (ENIAC)</th>
-                        <th style="padding: 12px;">Sistemas Contemporâneos (Microchips)</th>
+                    <tr>
+                        <th>Geração</th>
+                        <th>Componente Base</th>
+                        <th>Características Principais</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
-                        <td style="padding: 12px; font-weight:500;">Escala Espacial</td>
-                        <td style="padding: 12px; color:var(--vermelho-alerta)">Macroestruturas (Salas dedicadas de 167m²)</td>
-                        <td style="padding: 12px; color:var(--verde-sucesso)">Microscópica (Nanômetros incorporados)</td>
+                    <tr>
+                        <td>1ª Geração (1940-1956)</td>
+                        <td>Válvulas Eletrônicas</td>
+                        <td>Consumo elétrico massivo, quebras frequentes, tamanho gigantesco (ENIAC).</td>
                     </tr>
                     <tr>
-                        <td style="padding: 12px; font-weight:500;">Eficiência Energética</td>
-                        <td style="padding: 12px; color:var(--vermelho-alerta)">Consumo massivo de energia térmica (Válvulas)</td>
-                        <td style="padding: 12px; color:var(--verde-sucesso)">Baixa voltagem com alta estabilidade lógica</td>
+                        <td>2ª Geração (1956-1963)</td>
+                        <td>Transistores</td>
+                        <td>Menores, mais rápidos, eficientes e de estado sólido estável.</td>
+                    </tr>
+                    <tr>
+                        <td>3ª Geração (1964-1971)</td>
+                        <td>Circuitos Integrados</td>
+                        <td>Pastilhas de Silício aglomerando milhares de transistores miniaturizados.</td>
+                    </tr>
+                    <tr>
+                        <td>4ª Geração (1971-Presente)</td>
+                        <td>Microprocessadores</td>
+                        <td>CPUs completas em um único chip (Arquiteturas x86 e ARM).</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h3>Documentações Técnicas (Toque para girar)</h3>
-            <div class="container-flashcards">
-                <div class="flashcard-wrapper" onclick="girarCard(this)">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">O que foi o ENIAC?</div>
-                        <div class="flashcard-back">O marco inicial dos computadores digitais operando em escala militar.</div>
+            <h3>Documentações Técnicas Rápidas</h3>
+            <div class="container-flashcards-modular">
+                <div class="wrapper-card-modular">
+                    <div class="card-interno-modular">
+                        <div class="face-modular-frente">O que prega a Lei de Moore?</div>
+                        <div class="face-modular-verso">Formulada por Gordon Moore, previa que o número de transistores em um chip dobraria a cada dois anos, barateando custos de processamento.</div>
                     </div>
                 </div>
-                <div class="flashcard-wrapper" onclick="girarCard(this)">
-                    <div class="flashcard-inner">
-                        <div class="flashcard-front">O que é Microprocessador?</div>
-                        <div class="flashcard-back">A CPU completa integrada de forma micrométrica em uma pastilha de silício.</div>
+                <div class="wrapper-card-modular">
+                    <div class="card-interno-modular">
+                        <div class="face-modular-frente">O que é Memória Cache?</div>
+                        <div class="face-modular-verso">Uma memória estática ultrarrápida (SRAM) embutida na CPU que armazena os dados mais utilizados para evitar o gargalo da memória RAM principal.</div>
                     </div>
                 </div>
             </div>
 
-            <div class="interactive-box-clean">
-                <h3>Validação Estrutural</h3>
-                <p>Qual componente de hardware físico marca a transição direta para a Segunda Geração de computadores?</p>
-                <button class="opcao-clean" onclick="validarQuiz(this, false)">Válvulas Eletrônicas</button>
-                <button class="opcao-clean" onclick="validarQuiz(this, true)">Transistores</button>
-                <button class="opcao-clean" onclick="validarQuiz(this, false)">Circuitos Integrados</button>
+            <div class="bloco-interativo-modulo" id="quiz-computadores">
+                <h3>Avaliação Técnica de Sistemas (5 Questões)</h3>
+                <div class="pergunta-grupo" data-index="1">
+                    <p><strong>1. Qual arquitetura conceitual introduziu o armazenamento conjunto de programas e dados na memória principal?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'computadores')">Arquitetura de Von Neumann</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'computadores')">Arquitetura Harvard Pura</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="2">
+                    <p><strong>2. Qual componente físico substituiu as válvulas, inaugurando a segunda geração de computadores?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'computadores')">Capacitores de Cerâmica</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'computadores')">Transistores</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="3">
+                    <p><strong>3. Unidade Lógica e Aritmética (ULA) e Unidade de Controle (UC) são as partes básicas de qual componente?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'computadores')">Processador (CPU)</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'computadores')">Disco Rígido (HD)</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="4">
+                    <p><strong>4. Por que as memórias RAM são descritas como voláteis?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'computadores')">Perdem todos os dados quando a energia é desligada</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'computadores')">São feitas de gases semicondutores instáveis</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="5">
+                    <p><strong>5. Sistemas embarcados modernos de smartphones utilizam amplamente qual arquitetura focada em eficiência térmica?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'computadores')">RISC (como arquiteturas ARM)</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'computadores')">CISC (como Intel de alta voltagem)</button>
+                </div>
                 <span class="resultado-quiz" style="display:block; margin-top:1rem; font-weight:500;"></span>
             </div>
-        </section>
+        </div>
     `,
     seguranca: `
-        <section class="hero-dark-section">
+        <div class="hero-modular-banner">
             <h1>Segurança Cibernética</h1>
-            <p>Protocolos defensivos e blindagem contra vetores de vulnerabilidade ativos.</p>
-        </section>
+            <div class="subtitulo-filosofico">"Quem quer que troque a liberdade essencial por segurança temporária não merece nenhuma das duas." — Benjamin Franklin</div>
+        </div>
 
-        <section class="secao-conteudo-clara">
-            <h2>Matriz de Segurança Cibernética</h2>
-            <p>Aplicação de metodologias defensivas ativas para blindar redes de dados contra infiltrações de códigos maliciosos e ações de engenharia social.</p>
+        <div class="modulo-card-tela">
+            <h2>Matriz de Defesa Ativa e Criptografia</h2>
+            <p>O gerenciamento de vulnerabilidades digitais exige uma abordagem proativa, blindando o perímetro de hardware e conscientizando as camadas operacionais humanas.</p>
 
-            <h3>Vetores de Vulnerabilidade Comuns</h3>
-            <ul>
-                <li><strong>Phishing Estruturado:</strong> Dispersão de comunicados digitais fraudulentos estruturados para capturar chaves de acesso.</li>
-                <li><strong>Malware Corporativo:</strong> Agentes de software hostis que infectam barramentos internos para sequestro de dados.</li>
-                <li><strong>Engenharia Social:</strong> Manipulação comportamental focada em induzir o colaborador ao vazamento de dados confidenciais.</li>
-            </ul>
-
-            <div class="interactive-box-clean">
+            <div class="bloco-interativo-modulo">
                 <h3>Análise Preventiva: Força de Chaves de Acesso</h3>
-                <p>Abaixo, insira um modelo de credencial fictícia para checagem algorítmica de entropia:</p>
-                <input type="password" class="input-formal" oninput="analisarSenha(this.value)" placeholder="Inserir credencial analítica...">
-                <div id="resultado-senha" style="margin-top:1rem; font-weight:500; color:var(--texto-cinza)">Insira dados para execução do algoritmo.</div>
+                <p>Insira uma credencial analítica hipotética para avaliar a entropia criptográfica:</p>
+                <input type="password" class="input-modular-campo" oninput="analisarSenha(this.value)" placeholder="Digite a credencial corporativa para validação...">
+                <div id="resultado-senha" style="margin-top:1rem; font-weight:500; color:var(--texto-cinza)">Aguardando entrada de dados estruturais.</div>
             </div>
 
-            <div class="interactive-box-clean">
-                <h3>Validação de Protocolos</h3>
-                <p>Se uma infraestrutura bancária solicita alteração urgente de dados cadastrais via links externos, o analista deve classificar o ato como possível:</p>
-                <button class="opcao-clean" onclick="validarQuiz(this, true)">Phishing por Engenharia Social</button>
-                <button class="opcao-clean" onclick="validarQuiz(this, false)">Injeção Direta de Criptografia</button>
+            <div class="bloco-interativo-modulo" id="quiz-seguranca">
+                <h3>Avaliação de Resiliência Cibernética (5 Questões)</h3>
+                <div class="pergunta-grupo" data-index="1">
+                    <p><strong>1. Qual ataque manipula psicologicamente o usuário para induzir a entrega voluntária de chaves de acesso?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'seguranca')">Engenharia Social</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'seguranca')">Ataque DDoS por Força Bruta</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="2">
+                    <p><strong>2. Qual o protocolo de criptografia assimétrica utiliza uma chave pública para codificar e uma chave privada para decodificar?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'seguranca')">RSA</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'seguranca')">AES-256 Simétrico</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="3">
+                    <p><strong>3. Um ataque que criptografa os dados de uma empresa e exige resgate em criptomoedas é chamado de:</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'seguranca')">Spyware Comercial</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'seguranca')">Ransomware</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="4">
+                    <p><strong>4. O que caracteriza um ataque do tipo "Man-in-the-Middle"?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'seguranca')">Interceptação clandestina de tráfego entre duas partes legítimas</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'seguranca')">Queda forçada de servidores web por acessos simultâneos</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="5">
+                    <p><strong>5. A política de segurança de "Zero Trust" estabelece como princípio básico:</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'seguranca')">Nunca confiar, sempre verificar qualquer dispositivo interno ou externo</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'seguranca')">Liberar privilégios irrestritos aos administradores de rede</button>
+                </div>
                 <span class="resultado-quiz" style="display:block; margin-top:1rem; font-weight:500;"></span>
             </div>
-        </section>
+        </div>
     `,
     deepfakes: `
-        <section class="hero-dark-section">
+        <div class="hero-modular-banner">
             <h1>Mídias Sintéticas</h1>
-            <p>O impacto das redes adversariais generativas na veracidade documental.</p>
-        </section>
+            <div class="subtitulo-filosofico">"A tecnologia tornou-se uma faca de dois gumes, ampliando nossa visão e obscurecendo nossa verdade." — Crítica Midiática Contemporânea</div>
+        </div>
 
-        <section class="secao-conteudo-clara">
-            <h2>Mídias Sintéticas e Deepfakes</h2>
-            <p>Análise de inteligências generativas voltadas para a adulteração e criação contextual de arquivos de áudio e vídeo sob redes adversariais.</p>
+        <div class="modulo-card-tela">
+            <h2>Manipulação Avançada de Vetores de Imagem</h2>
+            <p>Através de Redes Adversariais Generativas (GANs), algoritmos conseguem sobrepor expressões faciais com fidelidade assustadora, forçando a segurança da informação a criar barreiras de análise forense.</p>
 
-            <div class="grid-nexus">
-                <div class="card-nexus-clean">
-                    <h4>🟢 Aplicação Comercial Legítima</h4>
-                    <p>Dublagens dinâmicas automatizadas, restaurações de fitas históricas danificadas e efeitos cinematográficos de alta fidelidade.</p>
+            <div class="bloco-interativo-modulo" id="quiz-deepfakes">
+                <h3>Avaliação de Autenticidade Digital (5 Questões)</h3>
+                <div class="pergunta-grupo" data-index="1">
+                    <p><strong>1. Qual a estrutura de inteligência artificial de duas redes concorrentes usada para forjar deepfakes ultra-realistas?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'deepfakes')">GANs (Redes Adversariais Generativas)</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'deepfakes')">Árvores de Decisão Puras</button>
                 </div>
-                <div class="card-nexus-clean">
-                    <h4>🔴 Vetores de Risco Estratégico</h4>
-                    <p>Falsificação de declarações institucionais oficiais, fraudes por representação biométrica e desestabilização de veracidade informativa.</p>
+                <div class="pergunta-grupo" style="display:none;" data-index="2">
+                    <p><strong>2. Qual das alternativas aponta uma anomalia biométrica comum usada para identificar deepfakes de vídeo rudimentares?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'deepfakes')">Frequência e sincronia inconsistente do piscar de olhos</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'deepfakes')">Resolução estrita em preto e branco nativo</button>
                 </div>
-            </div>
-
-            <div class="interactive-box-clean" style="text-align:center;">
-                <h3>🕵️ Simulador Analítico de Mídia</h3>
-                <p>Um arquivo de vídeo corporativo apresenta oscilações inexplicadas de iluminação ao redor do pescoço e uma taxa de piscada ocular nula em um anúncio financeiro de alta rentabilidade imediata. Qual o diagnóstico da análise?</p>
-                <div style="display:flex; gap:1rem; justify-content:center; margin-top:1.5rem;">
-                    <button class="btn-cta" onclick="alert('Análise Correta. Padrões inconsistentes e promessas fora da curva indicam manipulação sintética.')">Mídia Manipulada (Deepfake)</button>
-                    <button class="btn-cta" style="background-color:var(--texto-cinza)" onclick="alert('Diagnóstico Incorreto. Falhas físicas estruturais apontam anomalias artificiais.')">Mídia Autêntica</button>
+                <div class="pergunta-grupo" style="display:none;" data-index="3">
+                    <p><strong>3. No ecossistema das GANs, qual o papel específico da rede 'Discriminadora'?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'deepfakes')">Gerar novas imagens sintéticas do zero</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'deepfakes')">Avaliar se a imagem criada é falsa ou autêntica</button>
                 </div>
-            </div>
-        </section>
-    `,
-    robotica: `
-        <section class="hero-dark-section">
-            <h1>Sistemas Robóticos</h1>
-            <p>A integração entre barramentos lógicos e automação eletromecânica espacial.</p>
-        </section>
-
-        <section class="secao-conteudo-clara">
-            <h2>Sistemas Robóticos Mecanizados</h2>
-            <p>Fusão de hardware dinâmico e algoritmos lógicos para automação física e manipulação espacial controlada por software.</p>
-
-            <h3>Eixos de Atuação Industrial e Civil</h3>
-            <ul>
-                <li><strong>Medicina de Alta Precisão:</strong> Sondas robóticas cirúrgicas guiadas de forma remota e micrométrica.</li>
-                <li><strong>Automação Logística:</strong> Frotas autônomas e braços articulados de esteiras de montagem pesada.</li>
-                <li><strong>Exploração Espacial:</strong> Veículos autônomos parametrizados para mapeamento topográfico planetário severo.</li>
-            </ul>
-
-            <div class="interactive-box-clean">
-                <h3>Validação Operacional</h3>
-                <p>Qual categoria de robôs inteligentes obteve adoção em larga escala nas rotinas civis residenciais nas últimas décadas?</p>
-                <button class="opcao-clean" onclick="validarQuiz(this, true)">Sistemas Autônomos de Higienização (Aspiradores Robóticos)</button>
-                <button class="opcao-clean" onclick="validarQuiz(this, false)">Androides Humanoides Industriais de Manuseio</button>
+                <div class="pergunta-grupo" style="display:none;" data-index="4">
+                    <p><strong>4. Qual termo define a técnica de clonar a voz de uma pessoa com precisão usando arquivos de áudio de IA?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'deepfakes')">Voice Cloning / Audio Deepfake</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'deepfakes')">Filtro de Passa-Faixa Analógico</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="5">
+                    <p><strong>5. A técnica que substitui o rosto de uma pessoa em um vídeo por outra mantendo as expressões originais chama-se:</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'deepfakes')">Face Swapping</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'deepfakes')">Renderização Poligonal por Vetor</button>
+                </div>
                 <span class="resultado-quiz" style="display:block; margin-top:1rem; font-weight:500;"></span>
             </div>
-        </section>
+        </div>
+    `,
+    robotica: `
+        <div class="hero-modular-banner">
+            <h1>Sistemas Robóticos Expansos</h1>
+            <div class="subtitulo-filosofico">"Dar vida à matéria inanimada por meio da mecânica lógica é a maior audácia do intelecto humano." — Ensaio sobre Cibernética</div>
+        </div>
+
+        <div class="modulo-card-tela">
+            <h2>Engenharia Robótica, Cinematica e Automação</h2>
+            <p>A robótica moderna transcendeu as simples esteiras mecânicas de montagem industrial fixa. Trata-se da integração profunda entre robótica móvel, sensores proprioceptivos tridimensionais, atuadores hidráulicos lineares de alta resposta e algoritmos de controle em tempo real executados diretamente na borda (Edge Computing).</p>
+            
+            <h3>Métricas e Setores de Adoção de Alta Tecnologia</h3>
+            <p>O mercado de automação mecatrônica é estruturado por dados expressivos de desempenho e precisão geométrica milimétrica:</p>
+            <ul>
+                <li><strong>Graus de Liberdade (DoF):</strong> Braços robóticos contemporâneos operam com estruturas de 6 a 7 eixos coordenados, imitando o braço humano com precisão de repetição cinemática menor que 0,02 mm.</li>
+                <li><strong>Sensores LiDAR e Visão Computacional:</strong> Robôs móveis autônomos (AMRs) utilizam feixes de laser pulsados para gerar nuvens de pontos 3D, mapeando depósitos e hospitais em tempo real sem a dependência de trilhos físicos ou guias magnéticas.</li>
+                <li><strong>Robótica Médica:</strong> O sistema cirúrgico Da Vinci executa incisões microscópicas convertendo os tremores naturais das mãos do cirurgião em movimentos perfeitamente lineares e estáveis.</li>
+            </ul>
+
+            <h3>Cronologia dos Sistemas Mecanizados Autônomos</h3>
+            <div class="timeline-modular">
+                <div class="timeline-item-modular">
+                    <h4>1961 — Unimate na Indústria Automotiva</h4>
+                    <p>O primeiro robô industrial mecânico assume a linha de produção pesada de fundição de metal da General Motors.</p>
+                </div>
+                <div class="timeline-item-modular">
+                    <h4>2000 — Popularização dos Sistemas de Higienização Doméstica</h4>
+                    <p>A introdução de robôs aspiradores autônomos movidos por algoritmos de navegação randômica e sensores infravermelhos antichoque introduz a robótica no cotidiano civil.</p>
+                </div>
+                <div class="timeline-item-modular">
+                    <h4>2015 — Robôs Humanoides Dinâmicos</h4>
+                    <p>Sistemas bípede passam a empregar sensores de equilíbrio giroscópico e controle preditivo de modelo para saltar e navegar terrenos acidentados.</p>
+                </div>
+                <div class="timeline-item-modular">
+                    <h4>Atualidade — Cobots (Robôs Colaborativos)</h4>
+                    <p>Sistemas dotados de sensores de torque nas articulações, projetados para interromper o movimento ao menor toque, permitindo o trabalho seguro lado a lado com humanos.</p>
+                </div>
+            </div>
+
+            <h3>Módulos de Fixação Pedagógica (Passe o mouse)</h3>
+            <div class="container-flashcards-modular">
+                <div class="wrapper-card-modular">
+                    <div class="card-interno-modular">
+                        <div class="face-modular-frente">O que é Cinemática Inversa?</div>
+                        <div class="face-modular-verso">O cálculo matemático que determina as equações de ângulos necessários nas articulações para que a ferramenta na ponta do robô atinja uma coordenada espacial específica.</div>
+                    </div>
+                </div>
+                <div class="wrapper-card-modular">
+                    <div class="card-interno-modular">
+                        <div class="face-modular-frente">O que define os Atuadores?</div>
+                        <div class="face-modular-verso">Os componentes responsáveis por converter energia (elétrica, hidráulica ou pneumática) em movimento mecânico real, funcionando como os músculos do robô.</div>
+                    </div>
+                </div>
+                <div class="wrapper-card-modular">
+                    <div class="card-interno-modular">
+                        <div class="face-modular-frente">Função dos Sensores de Torque?</div>
+                        <div class="face-modular-verso">Medem a força de resistência e impacto sofrida nas juntas, cruciais para a segurança em robôs colaborativos trabalhando perto de operadores.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloco-interativo-modulo" id="quiz-robotica">
+                <h3>Avaliação de Engenharia Robótica (5 Questões)</h3>
+                <div class="pergunta-grupo" data-index="1">
+                    <p><strong>1. Que termo define a quantidade de eixos independentes nos quais o braço de um robô articulado pode se mover?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'robotica')">Graus de Liberdade (DoF)</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'robotica')">Taxa de Atualização de Clock</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="2">
+                    <p><strong>2. Qual tecnologia de mapeamento espacial emite pulsos de laser para guiar robôs móveis autônomos?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'robotica')">Bluetooth de Baixa Energia</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'robotica')">LiDAR</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="3">
+                    <p><strong>3. Como são classificados os robôs industriais modernos dotados de sensores de força sensíveis feitos para cooperar sem barreiras com os operários?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'robotica')">Cobots (Robôs Colaborativos)</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'robotica')">Sistemas Autônomos Hidráulicos Isolados</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="4">
+                    <p><strong>4. Qual o componente mecânico realiza a conversão direta de comandos elétricos da CPU em movimentos físicos angulares precisos?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'robotica')">Servo-Motor / Atuador</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'robotica')">Barramento de Endereço Estático</button>
+                </div>
+                <div class="pergunta-grupo" style="display:none;" data-index="5">
+                    <p><strong>5. As famosas Três Leis da Robótica, que influenciaram a ética de programação de sistemas reais, pertencem originalmente à literatura de qual autor?</strong></p>
+                    <button class="opcao-modular" onclick="responderQuiz(this, true, 'robotica')">Isaac Asimov</button>
+                    <button class="opcao-modular" onclick="responderQuiz(this, false, 'robotica')">Arthur C. Clarke</button>
+                </div>
+                <span class="resultado-quiz" style="display:block; margin-top:1rem; font-weight:500;"></span>
+            </div>
+        </div>
     `,
     extras: `
-        <section class="hero-dark-section">
+        <div class="hero-modular-banner">
             <h1>Documentação Geral</h1>
-            <p>Repositórios analíticos, glossário de termos e indicadores consolidados.</p>
-        </section>
+            <div class="subtitulo-filosofico">"Informação é dados dotados de relevância e propósito." — Peter Drucker</div>
+        </div>
 
-        <section class="secao-conteudo-clara">
-            <h2>Documentação e Repositório de Dados</h2>
-            <p>Clique sobre os conceitos estruturais para exibição da nota técnica descritiva:</p>
-            
-            <div class="glossario-termo" onclick="expandirTermo(this)" style="background:var(--cinza-limpo); padding:1rem; margin:0.5rem 0; border-radius:4px; cursor:pointer; border-left:3px solid var(--azul-escuro)">
+        <div class="modulo-card-tela">
+            <h2>Repositório e Glossário de Dados</h2>
+            <div class="bloco-wireframe-item" onclick="expandirTermo(this)" style="cursor:pointer; margin-bottom: 0.5rem;">
                 <strong>⚡ Algoritmo</strong>
-                <p style="display:none; margin-top:0.5rem; color:var(--texto-cinza);">Estrutura finita de instruções lógicas sequenciais para tratamento e resolução de fluxos de dados.</p>
+                <p style="display:none; margin-top:0.5rem; color:var(--texto-cinza);">Estrutura finita de instruções lógicas sequenciais para tratamento de fluxos de dados de forma determinística.</p>
             </div>
-            <div class="glossario-termo" onclick="expandirTermo(this)" style="background:var(--cinza-limpo); padding:1rem; margin:0.5rem 0; border-radius:4px; cursor:pointer; border-left:3px solid var(--azul-escuro)">
+            <div class="bloco-wireframe-item" onclick="expandirTermo(this)" style="cursor:pointer; margin-bottom: 0.5rem;">
                 <strong>🧠 Redes GANs (Adversariais)</strong>
-                <p style="display:none; margin-top:0.5rem; color:var(--texto-cinza);">Arquitetura dupla de aprendizado profundo onde redes geradoras e discriminadoras disputam para refinar a fidelidade de mídias sintéticas.</p>
+                <p style="display:none; margin-top:0.5rem; color:var(--texto-cinza);">Arquitetura dupla de aprendizado profundo onde redes geradoras e discriminadoras disputam realismo estatístico de mídia.</p>
             </div>
 
-            <h3 style="margin-top:3rem;">Indicadores Operacionais Globais</h3>
-            <div class="grid-nexus">
-                <div class="card-nexus-clean" style="border-top:3px solid var(--azul-vibrante)">
-                    <h3 style="font-size:2.5rem;">85%</h3>
-                    <p>Dos fluxos de infraestrutura fabril mundiais migraram para automações digitais de controle.</p>
+            <h3 style="margin-top:2rem;">Matriz de Conquistas Analíticas</h3>
+            <div class="grid-blocos-wireframe">
+                <div class="bloco-wireframe-item" id="conq-1">
+                    <h4>📊 Módulo Inicial Validado</h4>
+                    <p>O ecossistema registrou sua primeira resposta correta em quizzes.</p>
                 </div>
-                <div class="card-nexus-clean" style="border-top:3px solid var(--azul-escuro)">
-                    <h3 style="font-size:2.5rem;">+150B</h3>
-                    <p>De nós de conexões ativas estimadas para o ecossistema global da internet das coisas (IoT).</p>
+                <div class="bloco-wireframe-item" id="conq-2">
+                    <h4>🌐 Mapeamento Completo</h4>
+                    <p>Visite todas as seções corporativas para liberar este registro de auditoria.</p>
                 </div>
-            </div>
-
-            <h3>Matriz de Conquistas Analíticas</h3>
-            <div class="grid-nexus">
-                <div class="card-conquista unlocked-mock" id="conq-1">
-                    <span style="font-size:1.5rem;">📊</span>
-                    <div>
-                        <h4>Módulo Inicial Validado</h4>
-                        <p>O ecossistema registrou sua primeira resposta correta em quizzes.</p>
-                    </div>
-                </div>
-                <div class="card-conquista" id="conq-2">
-                    <span style="font-size:1.5rem;">🌐</span>
-                    <div>
-                        <h4>Mapeamento Completo</h4>
-                        <p>Visite todas as seções corporativas para liberar este registro.</p>
-                    </div>
-                </div>
-                <div class="card-conquista" id="conq-3">
-                    <span style="font-size:1.5rem;">🔐</span>
-                    <div>
-                        <h4>Analista de Criptografia</h4>
-                        <p>Gere e teste uma senha de alta entropia no simulador de segurança.</p>
-                    </div>
+                <div class="bloco-wireframe-item" id="conq-3">
+                    <h4>🔐 Analista de Criptografia</h4>
+                    <p>Gere e teste uma senha de alta entropia no simulador de segurança.</p>
                 </div>
             </div>
-        </section>
+        </div>
     `
 };
 
@@ -364,17 +438,16 @@ function navegar(paginaAlvo) {
         
         topicosExplorados.add(paginaAlvo);
         
-        // Garante que o estado visual da conquista 1 persista como desbloqueado na página extras
-        if (progressoGlobal > 20 && paginaAlvo === 'extras') {
+        if (progressoGlobal > 10 && paginaAlvo === 'extras') {
             const c1 = document.getElementById('conq-1');
-            if (c1) c1.classList.add('desbloqueada');
+            if (c1) c1.style.borderLeft = "4px solid var(--verde-sucesso)";
         }
 
-        if (topicosExplorados.size >= 5) {
+        if (topicosExplorados.size >= 6) {
             const conq2 = document.getElementById('conq-2');
-            if (conq2) conq2.classList.add('desbloqueada');
-            if (progressoGlobal < 70) {
-                progressoGlobal = 70;
+            if (conq2) conq2.style.borderLeft = "4px solid var(--verde-sucesso)";
+            if (progressoGlobal < 60) {
+                progressoGlobal = 60;
                 atualizarInterfaceGamificacao();
             }
         }
@@ -386,37 +459,48 @@ function atualizarInterfaceGamificacao() {
     const badge = document.getElementById('badge-atual');
     if (barra && badge) {
         barra.style.width = `${progressoGlobal}%`;
-        if (progressoGlobal >= 100) {
-            badge.innerText = "Especialista em Sistemas";
-        } else if (progressoGlobal >= 70) {
-            badge.innerText = "Auditor de Criptografia";
-        } else if (progressoGlobal >= 40) {
-            badge.innerText = "Analista de Redes";
-        }
+        if (progressoGlobal >= 100) badge.innerText = "Especialista";
+        else if (progressoGlobal >= 60) badge.innerText = "Auditor";
+        else badge.innerText = "Analista";
     }
 }
 
-function validarQuiz(botao, eCorreto) {
-    const container = botao.parentElement;
-    const botoes = container.querySelectorAll('.opcao-clean');
-    const feedback = container.querySelector('.resultado-quiz');
-    
-    botoes.forEach(btn => btn.disabled = true);
+// Mecânica de Quiz Multi-Estágio para 5 Perguntas Ordenadas por Tema
+function responderQuiz(botao, eCorreto, moduloId) {
+    const grupoAtual = botao.parentElement;
+    const indexAtual = parseInt(grupoAtual.getAttribute('data-index'));
+    const blocoQuiz = document.getElementById(`quiz-${moduloId}`);
+    const feedback = blocoQuiz.querySelector('.resultado-quiz');
     
     if (eCorreto) {
         botao.style.backgroundColor = "var(--verde-sucesso)";
         botao.style.color = "white";
-        feedback.innerText = "🟢 Validação Concluída. Resposta alinhada com as bases de dados históricas.";
-        feedback.style.color = "var(--verde-sucesso)";
         
-        progressoGlobal += 15;
-        if (progressoGlobal > 100) progressoGlobal = 100;
-        atualizarInterfaceGamificacao();
+        setTimeout(() => {
+            grupoAtual.style.display = "none";
+            const proximoGrupo = blocoQuiz.querySelector(`[data-index="${indexAtual + 1}"]`);
+            
+            if (proximoGrupo) {
+                proximoGrupo.style.display = "block";
+                feedback.innerText = `Questão ${indexAtual} validada. Avance para a próxima fase.`;
+                feedback.style.color = "var(--azul-royal)";
+            } else {
+                feedback.innerText = "🟢 Módulo de Quiz Concluído! 100% de precisão operacional alcançada.";
+                feedback.style.color = "var(--verde-sucesso)";
+                progressoGlobal += 20;
+                if (progressoGlobal > 100) progressoGlobal = 100;
+                atualizarInterfaceGamificacao();
+            }
+        }, 800);
     } else {
         botao.style.backgroundColor = "var(--vermelho-alerta)";
         botao.style.color = "white";
-        feedback.innerText = "🔴 Inconsistência identificada. Revise a documentação cronológica da seção.";
+        feedback.innerText = "🔴 Inconsistência de dados. Tente responder novamente o parâmetro correto.";
         feedback.style.color = "var(--vermelho-alerta)";
+        setTimeout(() => {
+            botao.style.background = "var(--branco)";
+            botao.style.color = "var(--texto-escuro)";
+        }, 1200);
     }
 }
 
@@ -425,7 +509,7 @@ function analisarSenha(senha) {
     if (!output) return;
     
     if (senha.length === 0) {
-        output.innerText = "Insira dados para execução do algoritmo.";
+        output.innerText = "Aguardando entrada de dados estruturais.";
         output.style.color = "var(--texto-cinza)";
         return;
     }
@@ -434,26 +518,14 @@ function analisarSenha(senha) {
     const temEspeciais = /[!@#$%^&*(),.?":{}|<>|]/.test(senha);
 
     if (senha.length >= 10 && temLetras && temNumeros && temEspeciais) {
-        output.innerText = "🟢 Matriz de Segurança: ALTA. Excelente padrão de proteção algorítmica.";
+        output.innerText = "🟢 Matriz de Segurança: ENTROPIA MÁXIMA DETECTADA.";
         output.style.color = "var(--verde-sucesso)";
-        
-        const conq3 = document.getElementById('conq-3');
-        if (conq3) conq3.classList.add('desbloqueada');
-        
         progressoGlobal = 100;
         atualizarInterfaceGamificacao();
-    } else if (senha.length >= 6 && temLetras && temNumeros) {
-        output.innerText = "🔵 Matriz de Segurança: MÉDIA. Recomendado adicionar caracteres especiais.";
-        output.style.color = "var(--azul-vibrante)";
     } else {
-        output.innerText = "🔴 Matriz de Segurança: VULNERÁVEL. Entropia inadequada.";
+        output.innerText = "🔴 Matriz de Segurança: ALGORITMO FRÁGIL. Requer maior complexidade.";
         output.style.color = "var(--vermelho-alerta)";
     }
-}
-
-// Mecânica do Efeito Flip Tridimensional nos Flashcards
-function girarCard(cardWrapper) {
-    cardWrapper.classList.toggle('flipped');
 }
 
 function expandirTermo(elemento) {
@@ -461,7 +533,6 @@ function expandirTermo(elemento) {
     if (p) p.style.display = (p.style.display === 'block') ? 'none' : 'block';
 }
 
-// Mecânica do Painel de Acessibilidade Retroatível
 function togglePainelAcessibilidade() {
     const painel = document.getElementById('painel-acessibilidade');
     if (painel) painel.style.display = (painel.style.display === 'flex') ? 'none' : 'flex';
@@ -478,17 +549,9 @@ function toggleAltoContraste() { document.body.classList.toggle('alto-contraste'
 function toggleDislexia() { document.body.classList.toggle('fonte-dislexia'); }
 function toggleDaltonismo() { document.body.classList.toggle('modo-daltonismo'); }
 
-// Mecânica de Rolagem Rápida Reativa
-function rolarTopo() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+function rolarTopo() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+function rolarRodape() { document.getElementById('rodape-portal')?.scrollIntoView({ behavior: 'smooth' }); }
 
-function rolarRodape() {
-    const rodape = document.getElementById('rodape-portal');
-    if (rodape) rodape.scrollIntoView({ behavior: 'smooth' });
-}
-
-// Evento para monitorar a rolagem e exibir a seta de voltar ao topo dinamicamente
 window.onscroll = function() {
     const btnSubir = document.getElementById('btn-subir');
     if (btnSubir) {
