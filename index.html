@@ -6,14 +6,20 @@
     <title>NEXUS – Sistema de Informação Modular</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600&family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="logo" onclick="navegar('home')">
-            <span class="cobra-esquerda">🐍</span>NEXUS<span class="cobra-direita">🐍</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--roxo-brilho)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="gato-logo">
+                <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3.1-9-7.56c0-1.25.43-2.4 1-3.44 0 0-1.82-6.42-.42-7 1.39-.58 4.64.27 6.42 2.26.65-.17 1.33-.26 2-.26z"></path>
+                <path d="M9 14h.01"></path>
+                <path d="M15 14h.01"></path>
+                <path d="M12 16c-.5 0-1-.5-1-1s.5-1 1-1 1 .5 1 1-.5 1-1 1z"></path>
+            </svg>
+            NEXUS
         </div>
         <nav aria-label="Navegação de Módulos">
             <button onclick="navegar('home')">Home</button>
@@ -25,7 +31,7 @@
             <button onclick="navegar('extras')">Documentos</button>
         </nav>
         <div class="xp-container" aria-live="polite">
-            <span id="badge-atual">Módulo Pronto</span>
+            <span id="badge-atual">Analista</span>
             <div class="barra-progresso"><div id="progresso-interno"></div></div>
         </div>
     </header>
@@ -33,18 +39,22 @@
     <main id="conteudo-principal" class="container-grid-modular">
         </main>
 
-    <div class="utilitarios-flutuantes">
-        <button id="btn-subir" class="btn-flutuante" onclick="rolarTopo()" title="Voltar ao topo" aria-label="Voltar ao topo">▲</button>
-        <button id="btn-descer" class="btn-flutuante" onclick="rolarRodape()" title="Ir para o rodapé" aria-label="Ir para o rodapé">▼</button>
-        <button class="btn-flutuante btn-engrenagem" onclick="togglePainelAcessibilidade()" title="Configurações e Acessibilidade" aria-label="Abrir acessibilidade">⚙️</button>
+    <div class="controles-esquerda">
+        <button id="btn-subir" class="btn-flutuante btn-seta" onclick="rolarTopo()" title="Subir" aria-label="Subir">▲</button>
+        <button id="btn-descer" class="btn-flutuante btn-seta" onclick="rolarRodape()" title="Descer" aria-label="Descer">▼</button>
+    </div>
+
+    <div class="controles-direita">
+        <button class="btn-flutuante btn-engrenagem" onclick="togglePainelAcessibilidade()" title="Acessibilidade" aria-label="Abrir acessibilidade">⚙️</button>
         
         <div id="painel-acessibilidade" class="painel-acessibilidade-conteudo" role="region" aria-label="Painel de acessibilidade">
-            <h4>Acessibilidade</h4>
+            <h4>Acessibilidade Integrada</h4>
             <button onclick="alterarFonte(1)">➕ Aumentar Fonte</button>
             <button onclick="alterarFonte(-1)">➖ Reduzir Fonte</button>
             <button onclick="toggleAltoContraste()">🌓 Alto Contraste</button>
             <button onclick="toggleDislexia()">📖 Modo Dislexia</button>
             <button onclick="toggleDaltonismo()">👁️ Modo Daltonismo</button>
+            <button onclick="iniciarLeitorTela()" id="btn-leitor">🔊 Narrar Página</button>
         </div>
     </div>
 
@@ -55,16 +65,11 @@
         </div>
     </div>
 
-    <div id="cookies-banner" class="lgpd-banner" role="alert">
-        <p>Este portal adota os padrões modulares da LGPD para integridade e segurança no processamento de dados.</p>
-        <button class="btn-cta" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;" onclick="document.getElementById('cookies-banner').style.display='none'">Conformidade</button>
-    </div>
-
     <footer id="rodape-portal">
         <div class="footer-content">
             <p><strong>NEXUS.</strong> Infraestrutura Digital de Engenharia Reativa e Conhecimento Filosófico.</p>
             <p>Todos os direitos reservados &copy; 2026 | Arquitetura de Software</p>
-            <p class="links-uteis"><span onclick="navegar('home')">Início</span> | <span onclick="navegar('extras')">Glossário Técnico</span></p>
+            <p class="links-uteis"><span onclick="navegar('home')">Início</span></p>
         </div>
     </footer>
 
