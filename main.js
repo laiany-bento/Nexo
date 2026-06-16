@@ -310,7 +310,7 @@ const paginas = {
         </div>
 
         <div class="modulo-card-tela">
-            <h2>Engenharia Robótica, Cinematica e Automação</h2>
+            <h2>Engenharia Robótica, Cinemática e Automação</h2>
             <p>A robótica moderna transcendeu as simples esteiras mecânicas de montagem industrial fixa. Trata-se da integração profunda entre robótica móvel, sensores proprioceptivos tridimensionais, atuadores hidráulicos lineares de alta resposta e algoritmos de controle em tempo real executados diretamente na borda (Edge Computing).</p>
             
             <h3>Métricas e Setores de Adoção de Alta Tecnologia</h3>
@@ -415,7 +415,7 @@ const paginas = {
             <div class="grid-blocos-wireframe">
                 <div class="bloco-wireframe-item" id="conq-1">
                     <h4>📊 Módulo Inicial Validado</h4>
-                    <p>O ecossistema registrou sua primeira resposta correta em quizzes.</p>
+                    <p>O ecossistema registreu sua primeira resposta correta em quizzes.</p>
                 </div>
                 <div class="bloco-wireframe-item" id="conq-2">
                     <h4>🌐 Mapeamento Completo</h4>
@@ -465,7 +465,6 @@ function atualizarInterfaceGamificacao() {
     }
 }
 
-// Mecânica de Quiz Multi-Estágio para 5 Perguntas Ordenadas por Tema
 function responderQuiz(botao, eCorreto, moduloId) {
     const grupoAtual = botao.parentElement;
     const indexAtual = parseInt(grupoAtual.getAttribute('data-index'));
